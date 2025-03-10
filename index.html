@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pedidos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .headerr {
+            width: 100%;
+            background-color: #007BFF;
+            color: rgb(247, 247, 247);
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .container {
+           
+            max-height: 80vh; /* Máximo 80% del alto de la pantalla */
+           overflow-y: auto;  /* Agregar scroll si el contenido es muuuy grande */
+
+
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #095cb6;
+        }
+    </style>
+</head>
+<body>
+    <div class="headerr">Calculadora de Pedidos</div>
+    <div class="container">
+        <form id="pedidoForm" action="" method="GET">
+            <h4>Sillas</h4>
+            <label>Sillas metálicas ($5): <input type="number" name="metalica" value="0"></label><br>
+            <label>Sillas acojinadas ($7): <input type="number" name="acojinada" value="0"></label><br>
+            <label>Sillas de plástico infantiles ($4): <input type="number" name="plastico_inf" value="0"></label><br>
+            <label>Sillas acojinadas infantiles ($5): <input type="number" name="acojinada_inf" value="0"></label><br>
+            <h4>Mesas</h4>
+            <label>Mesas rectangulares ($80): <input type="number" name="table_rec" value="0"></label><br>
+            <label>Mesas redondas ($90): <input type="number" name="table_redon" value="0"></label><br>
+            <label>Mesas cuadradas ($100): <input type="number" name="table_cuad" value="0"></label><br>
+            <h4>Loza</h4>
+            <label>Platos ($5): <input type="number" name="platos" value="0"></label><br>
+            <label>Vasos ($5): <input type="number" name="vasos" value="0"></label><br>
+            <label>Tazón ($5): <input type="number" name="tazon" value="0"></label><br>
+            <label>Copas ($5): <input type="number" name="copa" value="0"></label><br>
+            <label>Tazas ($5): <input type="number" name="taza" value="0"></label><br>
+            <h4>Cubiertos</h4>
+            <label>Cuchara ($3): <input type="number" name="cuchara" value="0"></label><br>
+            <label>Tenedor ($3): <input type="number" name="tenedor" value="0"></label><br>
+            <label>Cuchillo ($3): <input type="number" name="cuchillo" value="0"></label><br>
+            <h4>Modulos</h4>
+            <label>Módulo 6x4 ($600): <input type="number" name="modulo1" value="0"></label><br>
+            <label>Módulo 6x8 ($800): <input type="number" name="modulo2" value="0"></label><br>
+            <h4>Cortinas</h4>
+            <label>Cortinas 6x3 ($200): <input type="number" name="cortina1" value="0"></label><br>
+            <label>Cortinas 8x3 ($250): <input type="number" name="cortina2" value="0"></label><br>
+            <button type="submit">Calcular Pedido</button>
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('metalica')) {
+            const total = (
+                (parseInt(urlParams.get('metalica')) || 0) * 5 +
+                (parseInt(urlParams.get('acojinada')) || 0) * 7 +
+                (parseInt(urlParams.get('plastico_inf')) || 0) * 4 +
+                (parseInt(urlParams.get('acojinada_inf')) || 0) * 5 +
+                (parseInt(urlParams.get('table_rec')) || 0) * 80 +
+                (parseInt(urlParams.get('table_redon')) || 0) * 90 +
+                (parseInt(urlParams.get('table_cuad')) || 0) * 100 +
+                (parseInt(urlParams.get('platos')) || 0) * 5 +
+                (parseInt(urlParams.get('vasos')) || 0) * 5 +
+                (parseInt(urlParams.get('tazon')) || 0) * 5 +
+                (parseInt(urlParams.get('copa')) || 0) * 5 +
+                (parseInt(urlParams.get('taza')) || 0) * 5 +
+                (parseInt(urlParams.get('cuchara')) || 0) * 3 +
+                (parseInt(urlParams.get('tenedor')) || 0) * 3 +
+                (parseInt(urlParams.get('cuchillo')) || 0) * 3 +
+                (parseInt(urlParams.get('modulo1')) || 0) * 600 +
+                (parseInt(urlParams.get('modulo2')) || 0) * 800 +
+                (parseInt(urlParams.get('cortina1')) || 0) * 200 +
+                (parseInt(urlParams.get('cortina2')) || 0) * 250 
+            );
+            document.body.innerHTML = `
+                <div class="header">Calculadora de Pedidos</div>
+                <div class="container">
+                    <h2>El total del pedido es: $${total}</h2>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
+
