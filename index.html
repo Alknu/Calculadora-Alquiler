@@ -66,32 +66,70 @@
 <body>
     <div class="headerr">Calculadora de Pedidos</div>
     <div class="container">
-        <form id="pedidoForm" action="" method="GET">
+        <form id="pedidoForm" action="" method="GET" onsubmit="setTimeout(() => localStorage.clear(), 0);">
             <h4>Sillas</h4>
-            <label>Sillas metálicas ($5): <input type="number" name="metalica" value="0"></label><br>
-            <label>Sillas acojinadas ($7): <input type="number" name="acojinada" value="0"></label><br>
-            <label>Sillas de plástico infantiles ($4): <input type="number" name="plastico_inf" value="0"></label><br>
-            <label>Sillas acojinadas infantiles ($5): <input type="number" name="acojinada_inf" value="0"></label><br>
+            <label>Sillas metálicas ($5): <input type="number" name="metalica" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+             <label>Sillas acojinadas ($7): <input type="number" name="acojinada" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Sillas de plástico infantiles ($4): <input type="number" name="plastico_inf" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Sillas acojinadas infantiles ($5): <input type="number" name="acojinada_inf" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
             <h4>Mesas</h4>
-            <label>Mesas rectangulares ($80): <input type="number" name="table_rec" value="0"></label><br>
-            <label>Mesas redondas ($90): <input type="number" name="table_redon" value="0"></label><br>
-            <label>Mesas cuadradas ($100): <input type="number" name="table_cuad" value="0"></label><br>
+            <label>Mesas rectangulares ($80): <input type="number" name="table_rec" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Mesas redondas ($90): <input type="number" name="table_redon" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Mesas cuadradas ($100): <input type="number" name="table_cuad" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
             <h4>Loza</h4>
-            <label>Platos ($5): <input type="number" name="platos" value="0"></label><br>
-            <label>Vasos ($5): <input type="number" name="vasos" value="0"></label><br>
-            <label>Tazón ($5): <input type="number" name="tazon" value="0"></label><br>
-            <label>Copas ($5): <input type="number" name="copa" value="0"></label><br>
-            <label>Tazas ($5): <input type="number" name="taza" value="0"></label><br>
+            <label>Platos ($5): <input type="number" name="platos" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Vasos ($5): <input type="number" name="vasos" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Tazón ($5): <input type="number" name="tazon" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Copas ($5): <input type="number" name="copa" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Tazas ($5): <input type="number" name="taza" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
             <h4>Cubiertos</h4>
-            <label>Cuchara ($3): <input type="number" name="cuchara" value="0"></label><br>
-            <label>Tenedor ($3): <input type="number" name="tenedor" value="0"></label><br>
-            <label>Cuchillo ($3): <input type="number" name="cuchillo" value="0"></label><br>
+            <label>Cuchara ($3): <input type="number" name="cuchara" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Tenedor ($3): <input type="number" name="tenedor" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Cuchillo ($3): <input type="number" name="cuchillo" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
             <h4>Modulos</h4>
-            <label>Módulo 6x4 ($600): <input type="number" name="modulo1" value="0"></label><br>
-            <label>Módulo 6x8 ($800): <input type="number" name="modulo2" value="0"></label><br>
+            <label>Módulo 6x4 ($600): <input type="number" name="modulo1" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Módulo 6x8 ($800): <input type="number" name="modulo2" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
             <h4>Cortinas</h4>
-            <label>Cortinas 6x3 ($200): <input type="number" name="cortina1" value="0"></label><br>
-            <label>Cortinas 8x3 ($250): <input type="number" name="cortina2" value="0"></label><br>
+            <label>Cortinas 6x3 ($200): <input type="number" name="cortina1" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
+            <label>Cortinas 8x3 ($250): <input type="number" name="cortina2" value="0"
+                value="${localStorage.getItem('metalica') || 0}"
+                onchange="localStorage.setItem('metalica', this.value)" ></label><br>
             <button type="submit">Calcular Pedido</button>
         </form>
     </div>
